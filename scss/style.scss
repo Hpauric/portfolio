@@ -10,18 +10,6 @@ body {
   position: relative;
 }
 
-
-  @keyframes myopacitychange {
-      from { opacity: 0; }
-      to   { opacity: 1; }
-  }
-
-  @-webkit-keyframes myfadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-
 #shader-background {
   position: absolute;
   //top: -60vh;
@@ -29,6 +17,11 @@ body {
   z-index: -1;
   animation: myfadein 5s;
    -webkit-animation: myfadein 2s;
+}
+
+@-webkit-keyframes myheightchange {
+  from { height: 0; }
+  to   { height: 80px; }
 }
 
 .my-container {
@@ -48,8 +41,8 @@ body {
     font-size: 50px;
     font-family: 'Montserrat', sans-serif;
     color: white;
-    animation: myopacitychange 5s;
-     -webkit-animation: myfadein 2s;
+    //animation: myopacitychange 5s;
+     -webkit-animation: myheightchange 2s;
     //text-align: center;
     //height: 100px;
   }
@@ -59,7 +52,7 @@ body {
 
   h2 {
     text-align: center;
-    width: 350px;
+    //width: 350px;
     border: 1px solid white;
     align-self: center;
     margin-top: 10px;
@@ -72,6 +65,7 @@ body {
     font-weight: 100;
     position: relative;
     top: 60vh;
+    -webkit-animation: myheightchange 2s;
   }
   a {
     position: relative;
