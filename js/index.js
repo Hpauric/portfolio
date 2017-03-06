@@ -6,6 +6,7 @@ var fragmentShader = 'uniform float iGlobalTime;\n\tuniform vec2 iResolution;\n\
 
 // init camera, scene, renderer
 var scene, camera, renderer;
+/* global THREE */
 scene = new THREE.Scene();
 var fov = 75,
     aspect = window.innerWidth / window.innerHeight;
@@ -36,12 +37,13 @@ var tuniform = {
 };
 
 // resize canvas function
+/*
 window.addEventListener('resize', function () {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
 });
-
+*/
 tuniform.iResolution.value.x = window.innerWidth;
 tuniform.iResolution.value.y = window.innerHeight;
 // Create Plane
