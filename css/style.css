@@ -36,10 +36,11 @@ body {
     -webkit-animation: myheightchange 2s; }
   .my-container h2 {
     text-align: center;
+    height: 80px;
     border: 1px solid white;
     align-self: center;
     margin-top: 10px;
-    font-size: 40px;
+    font-size: 2em;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     font-family: 'Montserrat', sans-serif;
