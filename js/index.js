@@ -61,4 +61,20 @@ function render(time) {
     requestAnimationFrame(render);
     renderer.render(scene, camera);
 }
-render();
+//render();
+
+// Only render when element is visible
+/*global $ */
+$(window).scroll(function() {
+    var top_of_element = $("canvas").offset().top;
+    var bottom_of_element = $("canvas").offset().top + $("canvas").outerHeight();
+    var bottom_of_screen = $(window).scrollTop() + $(window).height();
+
+    if((bottom_of_screen > top_of_element) && (bottom_of_screen < bottom_of_element)){
+        // The element is visible, do something
+        render();
+    }
+    else {
+        // The element is not visible, do something else
+    }
+});
