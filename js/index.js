@@ -36,7 +36,7 @@ var tuniform = {
     }
 };
 
-// resize canvas function
+// resize #shader-background function
 /*
 window.addEventListener('resize', function () {
     camera.aspect = window.innerWidth / window.innerHeight;
@@ -66,8 +66,8 @@ function render(time) {
 // Only render when element is visible
 /*global $ */
 $(window).scroll(function() {
-    var top_of_element = $("canvas").offset().top;
-    var bottom_of_element = $("canvas").offset().top + $("canvas").outerHeight();
+    var top_of_element = $("#shader-background").offset().top;
+    var bottom_of_element = $("#shader-background").offset().top + $("#shader-background").outerHeight();
     var bottom_of_screen = $(window).scrollTop() + $(window).height();
 
     if((bottom_of_screen > top_of_element) && (bottom_of_screen < bottom_of_element)){
