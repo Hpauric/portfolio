@@ -72,6 +72,7 @@ $(window).scroll(function() {
 
     if((bottom_of_screen > top_of_element) && (bottom_of_screen < bottom_of_element)){
         // The element is visible, do something
+        console.log("visible");
         render();
     }
     else {
