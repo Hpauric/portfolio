@@ -58,10 +58,28 @@ scene.add(mesh);
 // draw animation
 function render(time) {
     tuniform.iGlobalTime.value += clock.getDelta();
-    requestAnimationFrame(render);
+    
+    //requestAnimationFrame(render);
+    checkIfToKeepRendering();
+    
+    
     renderer.render(scene, camera);
 }
 //render();
+
+function checkIfToKeepRendering(){
+    var top_of_element = $("#shader-background").offset().top;
+    var bottom_of_element = $("#shader-background").offset().top + $("#shader-background").outerHeight();
+    var bottom_of_screen = $(window).scrollTop() + $(window).height();
+
+    if((bottom_of_screen > top_of_element) && (bottom_of_screen < bottom_of_element)){
+        // The element is visible, do something
+        requestAnimationFrame(render);
+        }
+else {
+    //Do nothing
+    }
+}
 
 // Only render when element is visible
 /*global $ */
@@ -76,6 +94,6 @@ $(window).scroll(function() {
         render();
     }
     else {
-        // The element is not visible, do something else
+        // The element is not visible, do nothing
     }
 });
