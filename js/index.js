@@ -59,6 +59,8 @@ scene.add(mesh);
 function render(time) {
     tuniform.iGlobalTime.value += clock.getDelta();
     
+    //console.log("rendered at " + tuniform.iGlobalTime.value );
+    
     //requestAnimationFrame(render);
     checkIfToKeepRendering();
     
@@ -68,11 +70,10 @@ function render(time) {
 //render();
 
 function checkIfToKeepRendering(){
-    var top_of_element = $("#shader-background").offset().top;
-    var bottom_of_element = $("#shader-background").offset().top + $("#shader-background").outerHeight();
-    var bottom_of_screen = $(window).scrollTop() + $(window).height();
+    var bottom_of_element = $(window).height();
+    var top_of_screen = $(window).scrollTop();
 
-    if((bottom_of_screen > top_of_element) && (bottom_of_screen < bottom_of_element)){
+    if(top_of_screen < bottom_of_element){
         // The element is visible, do something
         requestAnimationFrame(render);
         }
@@ -84,11 +85,10 @@ else {
 // Only render when element is visible
 /*global $ */
 $(window).scroll(function() {
-    var top_of_element = $("#shader-background").offset().top;
-    var bottom_of_element = $("#shader-background").offset().top + $("#shader-background").outerHeight();
-    var bottom_of_screen = $(window).scrollTop() + $(window).height();
+    var bottom_of_element = $(window).height();
+    var top_of_screen = $(window).scrollTop();
 
-    if((bottom_of_screen > top_of_element) && (bottom_of_screen < bottom_of_element)){
+    if(top_of_screen < bottom_of_element){
         // The element is visible, do something
         console.log("visible");
         render();
