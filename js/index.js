@@ -58,12 +58,23 @@ scene.add(mesh);
 // draw animation
 function render(time) {
     tuniform.iGlobalTime.value += clock.getDelta();
+    let count = 0;
     
     console.log("rendered at " + tuniform.iGlobalTime.value );
     
     //requestAnimationFrame(render);
-    checkIfToKeepRendering();
     
+    
+    //Check every second whether to keep rendering
+    count++;
+    if( count > 60){
+        
+        count = 0;
+        checkIfToKeepRendering();
+    }
+    else {
+        requestAnimationFrame(render);
+    }
     
     renderer.render(scene, camera);
 }
