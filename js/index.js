@@ -59,7 +59,7 @@ scene.add(mesh);
 function render(time) {
     tuniform.iGlobalTime.value += clock.getDelta();
     
-    //console.log("rendered at " + tuniform.iGlobalTime.value );
+    console.log("rendered at " + tuniform.iGlobalTime.value );
     
     //requestAnimationFrame(render);
     checkIfToKeepRendering();
@@ -90,7 +90,7 @@ $(window).scroll(function() {
 
     if(top_of_screen < bottom_of_element){
         // The element is visible, do something
-        console.log("visible");
+        //console.log("visible");
         render();
     }
     else {
