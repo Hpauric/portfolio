@@ -78,7 +78,7 @@ function render(time) {
     
     renderer.render(scene, camera);
 }
-//render();
+render();
 
 function checkIfToKeepRendering(){
     var bottom_of_element = $(window).height();
