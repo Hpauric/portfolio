@@ -65,12 +65,12 @@ function render(time) {
     //requestAnimationFrame(render);
     
     
-    //Check every second whether to keep rendering
+    //Render for two seconds
     count++;
-    if( count > 60){
+    if( count > 120){
         
-        count = 0;
-        checkIfToKeepRendering();
+        //count = 0;
+        //checkIfToKeepRendering();
     }
     else {
         requestAnimationFrame(render);
