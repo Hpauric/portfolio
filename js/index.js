@@ -55,10 +55,12 @@ var material = new THREE.ShaderMaterial({
 var mesh = new THREE.Mesh(new THREE.PlaneBufferGeometry(window.innerWidth, window.innerHeight, 40), material);
 scene.add(mesh);
 
+let count = 0;
+
 // draw animation
 function render(time) {
     tuniform.iGlobalTime.value += clock.getDelta();
-    let count = 0;
+    
     
     console.log("rendered at " + tuniform.iGlobalTime.value );
     
