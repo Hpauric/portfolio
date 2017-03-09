@@ -102,7 +102,7 @@ $(window).scroll(function() {
     if(top_of_screen < bottom_of_element){
         // The element is visible, do something
         //console.log("visible");
-        render();
+        //render();
     }
     else {
         // The element is not visible, do nothing
